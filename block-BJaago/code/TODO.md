@@ -3,7 +3,7 @@ Create a execution context diagram of the following code on your notebook. Take 
 - Take in account the different phases of execution, different execution contexts
 
 1.
-
+<!-- -->
 ```js
 var firstName = 'Arya';
 var lastName = 'Stark';
