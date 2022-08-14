@@ -19,7 +19,8 @@ console.log(species); // 2
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./Untitled-2022-07-06-1853.png)
+
 
 - Create the execution context diagram
 - What will be the value of species on 1 and 2
@@ -35,8 +36,8 @@ function topLevelFn() {
   function nestedFn() {
     var anotherLocalVar = "Local to nestedFn's scope.";
 
-    console.log(localVar); // 1
-    console.log(topLevelVar); // 2
+    console.log(localVar); // "This is local to topLevelFn's scope"
+    console.log(topLevelVar); // 'This is global scope!'
   }
 
   nestedFn();
