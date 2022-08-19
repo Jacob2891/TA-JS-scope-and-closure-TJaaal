@@ -19,8 +19,9 @@ The above code will throw an error `Reference Error username is not defined`.
 {
   const username = 'Arya';
 }
-console.log(useranme); // output
+console.log(useranme); // 
 ```
+since username variable is block scoped , it cannot be accessed from outside the scope , hence the output is "VM257:4 Uncaught ReferenceError: useranme is not defined"
 
 3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -30,6 +31,7 @@ if (true) {
 }
 console.log(useranme); // output
 ```
+since username is block scoped and its been requested outside the scope , it cant be accessed OP:- "username is not defined" 
 
 4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -37,8 +39,10 @@ console.log(useranme); // output
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(username); // output
 ```
+var is only function scoped , whereas let and const are both block scoped and function scoped ,
+Since here var is in {} and it isnt block scoped , it can be accessed .
 
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -47,8 +51,10 @@ let username = 'John';
 if (true) {
   var username = 'Arya';
 }
-console.log(useranme); // output
+console.log(username); // output
 ```
+Since the username is being redeclared with a var inside {} , But since vsr isnt block scoped var cannot redeclare username , inevitably creating an error 
+O/P:- VM438:3 Uncaught SyntaxError: Identifier 'username' has already been declared
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -68,23 +74,24 @@ function sayHello() {
   let username = 'Arya';
 }
 sayHello();
-console.log(useranme); // output
+console.log(username); // output
 ```
+Since username is declared and redeclared iside the function , one inside the function wont be considered , hence the username in GEC(Global execution context) will be the output . O/P:- John
 
 8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 for (var i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // 0 'First'1 'First'2 'First'3 'First'4 'First'5 'First'6 'First'7 'First'8 'First'9 'First'
 }
-console.log(i, 'Second'); // output
+console.log(i, 'Second'); // 10 Second
 ```
 
 9. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
 for (let i = 0; i < 10; i++) {
-  console.log(i, 'First'); // output
+  console.log(i, 'First'); // 0 'First'1 'First'2 'First'3 'First'4 'First'5 'First'6 'First'7 'First'8 'First'9 'First'
 }
-console.log(i, 'Second'); // output
+console.log(i, 'Second'); // 10 Second
 ```
