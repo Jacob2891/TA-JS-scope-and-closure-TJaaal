@@ -1,7 +1,27 @@
 1. Create a function by your choice that accepts a callback function.
+```js
+function operation (num , opFn) {
+return opFn(num);
+};
 
+function minusTwo (num) {
+return (num - 2);
+}
+
+operation (5, minusTwo);
+```
 2. Create a function by you choice that returns a function reference.
+```js
+let numbers = [1,3,5,7,9];
 
+function double (arr) {
+  let final = [];
+  for (let num of arr) {
+    final.push(num*2)
+  }
+  return final ;
+}
+```
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
    - A 'callback' function - a function that is applied to each element of the array (inside of the function 'map')
@@ -9,7 +29,17 @@
 Have `map` return a new array filled with values that are the result of the 'callback' function on each element of the input array.
 
 ```js
-// Your code goes here
+let num = [1,3,5,7,8,9];
+
+let final = [] ;
+
+function map (arr, cb) {
+for(let elm of arr){
+final.push(cb(elm));
+}
+};
+return final
+
 
 // Test Your Code
 function multiplyByTwo(n) {
@@ -20,7 +50,7 @@ multiplyByTwo(1); //-> 2
 multiplyByTwo(2); //-> 4
 ```
 
-4. Create a higher-order function called `forEach` taht takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
+4. Create a higher-order function called `forEach` that takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
 
 ```js
 // Your code goes here
